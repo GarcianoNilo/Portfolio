@@ -326,12 +326,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.warn(`Approach ${index + 1} failed, trying next approach`);
                 tryNextApproach(index + 1);
             };
-            
-            // Start loading
+                  // Start loading
             tempImg.src = url;
         }
         
-        // Check if we have a cached URL that's less than 24 hours old        const cachedUrl = localStorage.getItem('profilePictureUrl');
+        // Check if we have a cached URL that's less than 24 hours old
+        const cachedUrl = localStorage.getItem('profilePictureUrl');
         const cachedTimestamp = localStorage.getItem('profilePictureTimestamp');
         
         const oneDayInMs = 24 * 60 * 60 * 1000;
