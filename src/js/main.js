@@ -188,14 +188,21 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkProfileImage() {
         const profilePicture = document.getElementById('profilePicture');
         if (!profilePicture) return;
-        
-        // Create placeholder SVG with initials "NG" for Nilo Garciano
+          // Create placeholder SVG with initials "NG" for Nilo Garciano
         const createPlaceholder = () => {
             console.warn('Using placeholder image');
             const initialsSvg = `
             <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+                <defs>
+                    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00e676;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#00b0ff;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
                 <rect width="400" height="400" fill="#212121"/>
-                <text x="200" y="220" font-family="Arial" font-size="120" font-weight="bold" fill="#00e676" text-anchor="middle">NG</text>
+                <circle cx="200" cy="170" r="90" fill="url(#grad)" opacity="0.9"/>
+                <circle cx="200" cy="350" r="130" fill="url(#grad)" opacity="0.7"/>
+                <text x="200" y="190" font-family="Arial" font-size="100" font-weight="bold" fill="#212121" text-anchor="middle">NG</text>
             </svg>
             `;
             
@@ -246,14 +253,19 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Use a timestamp to prevent caching
         const timestamp = new Date().getTime();
-        
-        // Use multiple approaches to try to fetch the profile picture
+          // Use multiple approaches to try to fetch the profile picture
         const approaches = [
             // Approach 1: Direct Facebook Graph API
             `https://graph.facebook.com/${fbUsername}/picture?type=large&_=${timestamp}`,
             
-            // Approach 2: Alternative format
-            `https://graph.facebook.com/v15.0/${fbUsername}/picture?height=500&_=${timestamp}`
+            // Approach 2: Alternative format with version number
+            `https://graph.facebook.com/v15.0/${fbUsername}/picture?height=500&_=${timestamp}`,
+            
+            // Approach 3: Using the proxy.cors.sh service to bypass CORS issues
+            `https://proxy.cors.sh/https://graph.facebook.com/${fbUsername}/picture?type=large`,
+            
+            // Approach 4: Alternative using direct URL to your GitHub profile picture
+            `https://github.com/GarcianoNilo.png?_=${timestamp}`
         ];
         
         // Function to display success message
@@ -287,10 +299,35 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Try each approach in sequence
         function tryNextApproach(index = 0) {
-            if (index >= approaches.length) {
-                // All approaches failed
+            if (index >= approaches.length) {                // All approaches failed
                 console.warn('All approaches failed to load the Facebook profile picture');
                 loadingOverlay.classList.remove('active');
+                
+                // Show a more helpful notification
+                const aboutSection = document.querySelector('.about-text h3');
+                if (aboutSection) {
+                    const notification = document.createElement('span');
+                    notification.className = 'profile-pic-notification';
+                    notification.innerHTML = 'Using placeholder image';
+                    notification.style.fontSize = '0.8rem';
+                    notification.style.marginLeft = '10px';
+                    notification.style.color = 'var(--primary-color)';
+                    notification.style.transition = 'opacity 1s ease';
+                    
+                    // Remove any existing notification
+                    const existingNotification = document.querySelector('.profile-pic-notification');
+                    if (existingNotification) {
+                        existingNotification.remove();
+                    }
+                    
+                    aboutSection.appendChild(notification);
+                    
+                    // Fade out notification after 5 seconds
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        setTimeout(() => notification.remove(), 1000);
+                    }, 5000);
+                }
                 
                 // Re-enable the refresh button
                 if (refreshBtn) {
