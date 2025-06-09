@@ -224,7 +224,8 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
     
-    // Function to fetch Facebook profile picturefunction fetchFacebookProfilePicture() {
+    // Function to fetch Facebook profile picture
+    function fetchFacebookProfilePicture() {
         const profilePicture = document.getElementById('profilePicture');
         const loadingOverlay = document.querySelector('.loading-overlay');
         const refreshBtn = document.getElementById('refreshProfilePic');
@@ -363,4 +364,4 @@ document.addEventListener('DOMContentLoaded', function() {
             tryNextApproach();
         }
     }
-);
+});
