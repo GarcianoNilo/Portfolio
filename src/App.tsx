@@ -14,6 +14,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter
+        basename="/Portfolio"
         future={{
           v7_startTransition: true,
           v7_relativeSplatPath: true,
