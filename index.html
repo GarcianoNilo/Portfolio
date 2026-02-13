@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Nilo Garciano Jr.</title>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🔒</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="matrix"></canvas>
+    <div class="matrix-overlay"></div>
+    <div class="glow-bg red-glow"></div>
+    <div class="glow-bg blue-glow"></div>
+
+    <nav class="cyber-nav">
+        <ul class="nav-list">
+            <li><a href="#home" class="nav-link active"><span class="bracket">[</span> Home <span class="bracket">]</span></a></li>
+            <li><a href="#about" class="nav-link"><span class="bracket">[</span> About <span class="bracket">]</span></a></li>
+            <li><a href="#work" class="nav-link"><span class="bracket">[</span> Labs <span class="bracket">]</span></a></li>
+            <li><a href="#experience" class="nav-link"><span class="bracket">[</span> Timeline <span class="bracket">]</span></a></li>
+            <li><a href="https://github.com/garcianonilo" target="_blank" class="nav-link"><span class="bracket">[</span> GitHub <span class="bracket">]</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        
+        <section id="home" class="hero section-reveal">
+            <div class="hero-label">
+                <span class="status-dot"></span>Nilo Garciano Jr. • BSIT 4th Year • Bukidnon State University
+            </div>
+            <h1>
+                Crafting Code.<br>
+                Connecting Networks.<br>
+                <span>Exploring Security.</span>
+            </h1>
+            <p class="hero-desc">
+                I am a technology enthusiast driven by curiosity. From building modern web applications to understanding the infrastructure they run on, I am constantly exploring how digital systems are built and how to keep them secure.
+            </p>
+            <div class="hero-btns">
+                <a href="Garciano-CV.pdf" class="btn-primary" download>
+                    Download CV <i data-lucide="download"></i>
+                </a>
+                <a href="https://github.com/garcianonilo" target="_blank" class="btn-secondary">
+                    <i data-lucide="github"></i> GitHub Profile
+                </a>
+            </div>
+        </section>
+
+        <section id="about" class="about-section section-reveal">
+            <div class="about-grid">
+                <div class="about-header">
+                    <h2 class="section-title">My Journey</h2>
+                </div>
+                <div class="about-content">
+                    <p class="lead-text">
+                        "My goal is to become a well-rounded tech professional who can create innovative solutions while ensuring they are secure and scalable."
+                    </p>
+                    <p>
+                        I am currently a senior student at <strong>BukSU</strong>. My journey started with software development building web and mobile apps to solve problems. As I dug deeper, I realized that building the app is only half the battle; the network it runs on matters just as much.
+                    </p>
+                    <p>
+                        Now, I am pivoting my focus toward <strong>Cybersecurity and Ethical Hacking</strong>. I am not an expert yet, but I am actively bridging my knowledge of <em>how things are built</em> (Dev & Net) with <em>how to break/secure them</em> (Sec).
+                    </p>
+                    
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <span class="stat-num">Dev</span>
+                            <span class="stat-label">Web & Mobile Interest</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">Net</span>
+                            <span class="stat-label">Infrastructure Basics</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">Sec</span>
+                            <span class="stat-label">Aspiring Red Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="marquee-wrapper section-reveal">
+            <div class="marquee-content">
+                <span class="tech-item">HTML/CSS</span>
+                <span class="tech-item">Mobile App Concepts</span>
+                <span class="tech-item">Cisco Packet Tracer</span>
+                <span class="tech-item">Networking Basics</span>
+                <span class="tech-item">Python (Learning)</span>
+                <span class="tech-item">Cybersecurity Interest</span>
+                <span class="tech-item">SQL Basics</span>
+                <span class="tech-item">Web Design</span>
+                <span class="tech-item">HTML/CSS</span>
+                <span class="tech-item">Mobile App Concepts</span>
+                <span class="tech-item">Cisco Packet Tracer</span>
+                <span class="tech-item">Networking Basics</span>
+                <span class="tech-item">Python (Learning)</span>
+                <span class="tech-item">Cybersecurity Interest</span>
+                <span class="tech-item">SQL Basics</span>
+                <span class="tech-item">Web Design</span>
+            </div>
+        </div>
+
+        <section id="work" class="grid-section section-reveal">
+            <div class="section-header">
+                <h2 class="section-title">Academic Labs</h2>
+                <div class="section-subtitle">A showcase of my development work and networking studies.</div>
+            </div>
+
+            <div class="bento-grid">
+                
+                <div class="card large">
+                    <a href="https://github.com/GarcianoNilo/TaskFlow.git" target="_blank" class="card-link">
+                    <div class="card-content">
+                        <div class="card-tag tag-dev">Mobile Development</div>
+                        <h3>TaskFlow</h3>
+                        <p>A mobile application designed to streamline task management and productivity. Built with focus on user experience and seamless task organization.</p>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="https://github.com/GarcianoNilo/20241_T145_DocumentRequestSystem.git" target="_blank" class="card-link">
+                    <div class="card-content">
+                        <div class="card-tag tag-blue">Web Development</div>
+                        <h3>Document Request System</h3>
+                        <p>A web-based system for managing document requests. Streamlined workflows for processing and tracking document submissions efficiently.</p>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="card">
+                    <a href="https://github.com/GarcianoNilo/WST-ALUMNI-TRACKING-SYSTEM.git" target="_blank" class="card-link">
+                    <div class="card-content">
+                        <div class="card-tag tag-dev">Web Development</div>
+                        <h3>WST Alumni Tracking System</h3>
+                        <p>A comprehensive web application for tracking and managing alumni information. Facilitates networking and engagement with institution graduates.</p>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="card large">
+                    <div class="card-content">
+                        <div class="card-tag tag-red">IoT & Mobile/Web</div>
+                        <h3>Smart Baby Crib</h3>
+                        <p>A capstone project combining IoT, mobile, and web technologies. Features AI-powered movement detection that automatically notifies parents or guardians if the baby attempts to climb out of the crib, ensuring safety with intelligent automation.</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <section id="experience" class="grid-section section-reveal">
+            <div class="section-header">
+                <h2 class="section-title">Timeline</h2>
+                <div class="section-subtitle">My academic and extracurricular path.</div>
+            </div>
+
+            <div class="exp-list">
+                <div class="exp-item">
+                    <div>
+                        <div class="exp-role">Bachelor of Science in Information Technology</div>
+                        <div class="exp-company">Bukidnon State University (BukSU)</div>
+                    </div>
+                    <div class="exp-date">2022 - Present</div>
+                </div>
+                <div class="exp-item">
+                    <div>
+                        <div class="exp-role">Cisco Certified Network Associate</div>
+                        <div class="exp-company">Coursework Completion (ITN & SRWE)</div>
+                    </div>
+                    <div class="exp-date">Completed</div>
+                </div>
+                <div class="exp-item">
+                    <div>
+                        <div class="exp-role">Hack4Gov 2025 Regional Qualifiers</div>
+                        <div class="exp-company">Competition Participant</div>
+                    </div>
+                    <div class="exp-date">2025</div>
+                </div>
+                <div class="exp-item">
+                    <div>
+                        <div class="exp-role">NetAcad Riders 2025 (Round 1)</div>
+                        <div class="exp-company">Cisco Networking Academy</div>
+                    </div>
+                    <div class="exp-date">2025</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Designed & Built by Nilo Garciano Jr.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
